@@ -1,0 +1,70 @@
+{% extends 'basic.html' %}
+{% block title %}Home{% endblock %}
+{% block body %}
+
+<div class="cards">
+  {% for i in card %}
+  <div class="card">
+    <img class="card-img-top" src="{{ i.image.url }}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{ i.title|slice:"0:22" }}..</h5>
+      <p class="card-text">{{ i.description|slice:"0:29" }}...</p>
+      <a href="{{ i.link_name }}" class="btn btn-primary">Read Entire</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<style>
+  body {
+    width: 100%;
+    height: 100%;
+    background-image: url(https://images.pexels.com/photos/831079/pexels-photo-831079.jpeg?cs=srgb&dl=pexels-rudolf-kirchner-831079.jpg&fm=jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .card-img-top {
+    object-fit: cover;
+    height: 10rem;
+  }
+
+  .cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .card {
+    border: none;
+    text-align: center;
+    border-radius: 14px;
+    width: 265px;
+    margin: 35px;
+    /* float: left; */
+    /* flex-wrap: wrap; */
+    box-shadow: 8px 10px 10px 2px rgba(0, 0, 0, 0.1);
+    background-color: #f8f9fa;
+  }
+
+  .card:hover {
+    transition: 0.7s;
+    transform: translatey(-8%);
+  }
+
+  .card-title {
+    margin-bottom: 5px;
+    font-size: 20px;
+  }
+
+  .card-text {
+    font-size: 12px;
+  }
+</style>
+
+<link href="gsap.js">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+  integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{% endblock %}

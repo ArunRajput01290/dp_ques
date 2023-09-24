@@ -1,0 +1,235 @@
+{% extends 'basic.html' %}
+{% block title %}Reasoning{% endblock %}
+{% block body %}
+
+
+<!-- <form method="post" action="{% url 'calculate_results' %}" id="quizForm1">
+    {% csrf_token %}
+    <div class="animated-text">
+        Bsss Itna pad lo <span></span>
+    </div>
+
+    {% for question in question_reas %}
+    <div class="question">
+        <p>Question {{ forloop.counter }} :- {{ question.question }}</p>
+        <div class="options">
+            <div class="option">
+                <input type="radio" name="q{{ forloop.counter }}_option" id="q{{ forloop.counter }}_option1" value="A">
+                <label for="q{{ forloop.counter }}_option1">{{ question.option1 }}</label><br>
+            </div>
+            <div class="option">
+                <input type="radio" name="q{{ forloop.counter }}_option" id="q{{ forloop.counter }}_option2" value="B">
+                <label for="q{{ forloop.counter }}_option2">{{ question.option2 }}</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="q{{ forloop.counter }}_option" id="q{{ forloop.counter }}_option3" value="C">
+                <label for="q{{ forloop.counter }}_option3">{{ question.option3 }}</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="q{{ forloop.counter }}_option" id="q{{ forloop.counter }}_option4" value="D">
+                <label for="q{{ forloop.counter }}_option4">{{ question.option4 }}</label>
+            </div>
+        </div>
+        <div class="button-container">
+            <button type="button" class="btn btn-outline-dark show-solution" id="btn">view solution</button>
+            <button type="button" class="btn btn-outline-dark" id="btn">click to see more example </button>
+        </div>
+        <div class="solution" style="display: none;">
+            <p>{{ question.solution }}</p>
+        </div>
+
+    </div>
+    {% endfor %}
+    <button type="button" class="btn btn-primary" id="btnh">submit</button>
+    <a href="/"><button type="button" class="btn btn-dark" id="btnh">Go to home</button></a>
+</form>
+<script>
+    // Add a click event listener to all "View Solution" buttons
+    const showSolutionButtons = document.querySelectorAll('.show-solution');
+    showSolutionButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Find the parent question div
+            const questionDiv = button.closest('.question');
+
+            // Toggle the visibility of the solution div
+            const solutionDiv = questionDiv.querySelector('.solution');
+            if (solutionDiv.style.display === 'none') {
+                solutionDiv.style.display = 'block';
+            } else {
+                solutionDiv.style.display = 'none';
+            }
+        });
+    });
+
+    const submitButton = document.getElementById('btnh');
+    submitButton.addEventListener('click', submitForm);
+    function submitForm() {
+        console.log("Form submitted"); // Add this line to check if the function is called
+        document.forms["quizForm1"].submit();
+    }
+</script>
+
+
+<style>
+    #btnh {
+        height: 45px;
+        width: 60%;
+        margin: 0.8% 18%;
+        border-radius: 140px;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnyzOGZzI92UReZg9aeBpqVA-HZRrk1LSUhpgK5_dHVw&s');
+        background-position: top;
+        background-size: cover;
+        background-repeat: no-repeat;
+        font-family: Arial, sans-serif;
+        color: #333;
+    }
+
+    .animated-text {
+        font-family: cursive;
+        font-size: 28px;
+        font-weight: 800;
+        padding: 0.8%;
+        text-align: center;
+        mix-blend-mode: multiply;
+    }
+
+    .animated-text span {
+        padding: 2px;
+        position: relative;
+    }
+
+    .animated-text span::before {
+        content: "isse bahar kuch nhi aayega";
+        color: #F2E8C6;
+        background: linear-gradient(cyan, blue, rgb(18, 73, 109), cyan);
+        border-radius: 18px;
+        animation: word 5s infinite;
+    }
+
+    @keyframes word {
+
+        0%,
+        30% {
+            content: "isse bahar kuch nhi aayega";
+        }
+
+        31%,
+        65% {
+            content: "Delhi Police mai selection Pakka";
+        }
+
+        66%,
+        100% {
+            content: "Aag Laga Doge Exam Mai";
+        }
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .solution {
+        margin: 1% 4%;
+    }
+
+    .question {
+        padding: 0 2%;
+        font-size: x-large;
+    }
+
+    .options {
+        margin: 0 1%;
+    }
+
+    .option input[type="radio"] {
+        display: none;
+    }
+
+    .option label {
+        width: 95%;
+        display: inline-block;
+        cursor: pointer;
+        position: relative;
+        padding-left: 30px;
+    }
+
+    .option label::before {
+        content: "";
+        position: absolute;
+        left: 89.5%;
+        top: 18%;
+        width: 28px;
+        height: 28px;
+        border: 2px solid #1d3d3d9f;
+        border-radius: 20%;
+        background-color: transparent;
+    }
+
+    .option input[type="radio"]:checked+label::after {
+        content: "\2713";
+        position: absolute;
+        left: 90%;
+        top: 6%;
+        font-size: 24px;
+        color: green;
+    }
+
+    .button-container {
+        margin-top: 10px;
+
+    }
+
+    #btn {
+        margin: 0 4%;
+        margin-bottom: 1%;
+    }
+
+    button {
+        display: flex;
+        justify-content: space-around;
+    }
+</style> -->
+
+<div class="container">
+    <h1>Coming Soon</h1>
+    <p>We're working tirelessly to bring you something truly special!</p>
+    <p>Our team is passionately crafting an experience that will exceed your expectations.</p>
+    <p>Stay tuned for:</p>
+</div>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-image: url(https://media.istockphoto.com/id/1272422593/photo/colored-smoke-flowing-dark-abstract-background.jpg?s=170667a&w=0&k=20&c=re30OjtznweEJxsASsExOOoE1vMH126IWU1ZAELRfXk=);
+        background-position: top;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .container {
+        text-align: center;
+        margin: 5%;
+    }
+
+    h1 {
+        font-size: 3em;
+        color: whitesmoke;
+    }
+
+    p {
+        font-size: 1.2em;
+        color: whitesmoke;
+        margin-top: 20px;
+    }
+</style>
+{% endblock %}

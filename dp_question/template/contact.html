@@ -1,0 +1,132 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block title %}Contact Us{% endblock %}
+{% block body %}
+<form action="contact.html" method="post">
+    {% csrf_token %}
+    <div class="page">
+        <div class="heading">
+            <h2>We are here to solve your all queries</h2>
+        </div>
+        <div class="detail">
+            <p>Phone : 7668279903</p>
+            <p>Email : <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJfscdlgWMjmcVvXptZSjSTHlpQftPSWdzHBxRSTqqkznGGkqshbLKxjbbKmsSzkHpXNrJB" target="_blank">arunrajput01290@gmail.com</a></p>
+            <p>website : <a href="#">arunrajput.com</a></p>
+        </div>
+        <div class="data">
+            <div class="content">
+                <h2>Contact Us </h2>
+                <div class="side">
+                    <div class="name">
+                        <p>First Name</p>
+                        <input type="text" name="name">
+                    </div>
+                    <div class="email">
+                        <p>Email</p>
+                        <input type="email" name="email">
+                    </div>
+                </div>
+                <p>Subject</p>
+                <input type="text" name="subject">
+                <p id="msg">Message</p>
+                <textarea name="Suggestion" id="textarea" cols="70" rows="5"></textarea> <br>
+                <button type="submit" id="btn">Submit</button>
+            </div>
+            <div class="image">
+                <img src="{% static 'dp_question/cont 4.jpg' %}" alt="image">
+            </div>
+        </div>
+    </div>
+</form>
+
+<style>
+    body,
+    html {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .page {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .heading {
+        text-align: center;
+        margin: 40px;
+        font-size: 3rem;
+    }
+
+    .detail {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+    }
+
+    .data {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .content {
+        flex: 1;
+        padding: 20px;
+    }
+
+    .side {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    .name,
+    .email {
+        flex-basis: calc(50% - 10px);
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    #btn {
+        border-radius: 12px;
+        background-color: rgb(219, 25, 25);
+        padding: 10px;
+        margin: 20px 0;
+        color: aliceblue;
+        width: 100%;
+    }
+
+    img {
+        margin-left: 6%;
+        max-width: 90%;
+        height: 100%;
+        border-radius: 20px;
+        box-shadow: 2px 4px 16px 2px #5c5959;
+    }
+
+    @media (max-width: 700px) {
+        .side {
+            flex-direction: column;
+        }
+
+        .name,
+        .email {
+            flex-basis: 100%;
+        }
+    }
+</style>
+{% endblock %}

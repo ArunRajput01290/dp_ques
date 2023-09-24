@@ -1,0 +1,122 @@
+{% extends 'basic.html' %}
+{% block title %}Gk{% endblock %}
+{% block body %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<div class="pdf-list-container">
+    <div class="animated-text">
+        Bsss Itna pad lo <span></span>
+    </div>
+    <h2>Sure Shot General knowledge Questions</h2>
+    <p>Note :- click to download pdf and read atleat 10 pages in a day </p>
+    <div class="pdf-cards">
+        {% for pdf_document in pdf_documents %}
+        <div class="pdf-card">
+            <a class="pdf-link" href="{{ pdf_document.pdf_file.url }}" download>
+                <div class="pdf-title">{{ pdf_document.title }}</div>
+                <i class="fas fa-download"></i>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<style>
+    /* Reset some default styles */
+    .animated-text {
+        font-family: cursive;
+        font-size: 28px;
+        font-weight: 800;
+        padding: 0.8%;
+        text-align: center;
+        mix-blend-mode: multiply;
+    }
+
+    .animated-text span {
+        padding: 2px;
+        position: relative;
+    }
+
+    .animated-text span::before {
+        content: "isse bahar kuch nhi aayega";
+        color: #F2E8C6;
+        background: linear-gradient(cyan, blue, rgb(18, 73, 109), cyan);
+        border-radius: 18px;
+        animation: word 5s infinite;
+    }
+
+    @keyframes word {
+
+        0%,
+        30% {
+            content: "isse bahar kuch nhi aayega";
+        }
+
+        31%,
+        65% {
+            content: "Delhi Police mai selection Pakka";
+        }
+
+        66%,
+        100% {
+            content: "Aag Laga Doge Exam Mai";
+        }
+    }
+
+
+    body {
+        background-image: url(https://images.pexels.com/photos/255379/pexels-photo-255379.jpeg?cs=srgb&dl=pexels-miguel-%C3%A1-padri%C3%B1%C3%A1n-255379.jpg&fm=jpg);
+        background-position: top;
+        background-size: cover;
+        background-repeat: no-repeat;
+        font-family: Arial, sans-serif;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+
+    .pdf-list-container {
+        text-align: center;
+        padding: 10px;
+    }
+
+    h2 {
+        background-color: #3498db;
+        color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .pdf-cards {
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .pdf-card {
+        background-color: #07070775;
+        border: 1px solid #ddd;
+        padding: 8px;
+        border-radius: 5px;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .pdf-link {
+        color: #3498db;
+        text-decoration: none;
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pdf-link i {
+        margin-top: 10px;
+        font-size: 24px;
+    }
+
+    .pdf-link:hover {
+        text-decoration: underline;
+    }
+</style>
+{% endblock %}
